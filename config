@@ -193,10 +193,12 @@ exec_always compton -f
 
 # Start browser
 bindsym $mod+f exec firefox
+bindsym $mod+g exec google-chrome
 
 # Start program on set workspace
 
 assign [class="Firefox"] $ws1
+assign [class="google-chrome"] $ws1
 
 # Caps lock & Numlock
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
