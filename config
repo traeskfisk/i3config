@@ -205,10 +205,20 @@ assign [class="Thunderbird"] $ws9
 
 # Caps lock & Numlock
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
-bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock exec pkill -SIGRTMIN+11 i3blocks
 
 # Connect to wifi
 exec wicd-gtk -t
 
 # Start Mullvad
 exec gksudo mullvad
+
+# Screenshot
+bindsym Print exec gnome-screenshot
+
+# Turn off tap click (single finger, two finger, and 3 finger)
+exec synclient TapButton1=0 TapButton2=0 TapButton3=0
+
+# Set language on keyboard
+bindsym $mod+o exec setxkbmap se
+bindsym $mod+p exec setxkbmap us
