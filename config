@@ -191,7 +191,7 @@ exec_always feh --bg-scale /home/user/Pictures/wallpaper.jpg
 # For opacity on rofi
 exec_always compton -f
 
-# Custom startup
+# Custom start program
 bindsym $mod+f exec firefox
 bindsym $mod+g exec google-chrome
 bindsym $mod+t exec atom
@@ -222,3 +222,6 @@ exec synclient TapButton1=0 TapButton2=0 TapButton3=0
 # Set language on keyboard
 bindsym $mod+o exec setxkbmap se
 bindsym $mod+p exec setxkbmap us
+
+# Start thunderbird
+exec thunderbird
