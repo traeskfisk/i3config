@@ -73,7 +73,7 @@ set $ws4 "4:"
 set $ws5 "5:"
 set $ws6 "6:"
 set $ws7 "7:"
-set $ws8 "8:"
+set $ws8 "8:"
 set $ws9 "9:"
 set $ws10 "10:"
 
@@ -173,15 +173,15 @@ bindsym $mod+shift+x exec i3lock --color "$bg-color"
 
 # Sreen brightness controls
 # Increase screen brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20
 # Decrease screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 
 # Pulse Audio controls
 # Increase sound volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% 
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 # Decrease sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 # Mute sound
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
@@ -191,15 +191,23 @@ exec_always feh --bg-scale /home/user/Pictures/wallpaper.jpg
 # For opacity on rofi
 exec_always compton -f
 
-# Start browser
+# Custom startup
 bindsym $mod+f exec firefox
 bindsym $mod+g exec google-chrome
+bindsym $mod+t exec atom
 
 # Start program on set workspace
-
 assign [class="Firefox"] $ws1
 assign [class="google-chrome"] $ws1
+assign [class="Mullvad"] $ws8
+assign [class="Atom"] $ws4
 
 # Caps lock & Numlock
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+
+# Connect to wifi
+exec wicd-gtk -t
+
+# Start Mullvad
+exec gksudo mullvad
