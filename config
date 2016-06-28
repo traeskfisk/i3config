@@ -198,4 +198,6 @@ bindsym $mod+f exec firefox
 
 assign [class="Firefox"] $ws1
 
-
+# Caps lock & Numlock
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
